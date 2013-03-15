@@ -1,9 +1,10 @@
-Bluepill.application(:rails, log_file: "/var/log/bluepill.log") do
+Bluepill.application(:rails, log_file: "/var/log/bluepill.log") do 
   RAILS_ROOT = '/itbackup/web/current/'
 
   uid = gid = "www"
   working_dir = RAILS_ROOT
   rails_env = ENV['RAILS_ENV'] || 'production'
+ 
 
   process("unicorn") do
     pid_file '/itbackup/web/shared/pids/unicorn.pid'
@@ -14,7 +15,7 @@ Bluepill.application(:rails, log_file: "/var/log/bluepill.log") do
 
     start_grace_time 3.seconds
     stop_grace_time 5.seconds
-    restart_grace_time 8.seconds
+    restart_grace_time 13.seconds
 
     monitor_children do
       stop_command "kill -QUIT {{PID}}"

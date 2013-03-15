@@ -12,7 +12,7 @@
 # more will usually help for _short_ waits on databases/caches.
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-worker_processes rails_env == "production" ? 10 : 2
+worker_processes rails_env == "production" ? 5 : 2
 
 APP_PATH = '/itbackup/web'
 
@@ -46,7 +46,7 @@ stdout_path "#{APP_PATH}/shared/log/unicorn.stdout.log"
 
 # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
 # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
-preload_app false
+preload_app true
 GC.respond_to?(:copy_on_write_friendly=) and
   GC.copy_on_write_friendly = true
 
