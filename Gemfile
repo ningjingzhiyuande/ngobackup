@@ -31,7 +31,10 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+group :production do
+  gem 'unicorn'
+  gem 'bluepill'
+end
 
 # Deploy with Capistrano
 gem 'capistrano'
