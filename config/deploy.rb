@@ -80,6 +80,10 @@ namespace :deploy do
     end
   end
 
+  task :compile_assets, :roles => :web do
+    run "cd #{current_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+  end
+
   task :clean_git_cache, :roles => :app do
     run "rm -rf /itbackup/web/shared/cached-copy/ "
   end
@@ -137,9 +141,10 @@ namespace :deploy do
   end
 end
 
-before('bundle:install', 'bundle:prepare')
+#before('bundle:install', 'bundle:prepare')
 after('bundle:install', 'bundle:gemfilelock')
 
 before('deploy:finalize_update', 'deploy:links')
+after "deploy:finalize_update","bundle:compile_assets")
 after('deploy:update', 'deploy:migrate')
 #after('deploy:update', 'deploy:bg')
