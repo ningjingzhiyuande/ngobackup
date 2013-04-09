@@ -1,9 +1,16 @@
 Itbackup::Application.routes.draw do
 
+  namespace :admin do
+    resources :ngos
+  end
+
+
   resources "home",:controller=>"home"
   resources "ngo",:controller =>"ngo"
+  resources "blog",:controller =>"blog"
   resources "about",:controller =>"about"
   resources "cases"
+  resources "contacts"
   resources "supports"
   root :to=> "home#index"
   # The priority is based upon order of creation:

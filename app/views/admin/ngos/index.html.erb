@@ -1,0 +1,30 @@
+<h3>Listing admin_ngos</h3>
+<table class="table table-bordered table-striped table-hover">
+    <colgroup>
+        <col class="span1">
+        <col class="span7">
+        <col class="span1">
+    </colgroup>
+    <thead >
+      <tr >
+        <th>名称</th>
+        <th>公益详情</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@admin_ngos.each do |ngo|%>
+      <tr>
+        <td>
+           <code><%=ngo.name%></code>
+        </td>
+        <td><%=ngo.info%></td>
+        <td>修改</td>
+      </tr>
+      <%end%>           
+    </tbody>
+</table>
+
+
+
+<%= link_to 'New Ngo', new_admin_ngo_path %>

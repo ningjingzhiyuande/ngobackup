@@ -1,0 +1,52 @@
+<%= form_for([:admin,@ngo],:html=>{:class=>"form-horizontal"}) do |f| %>
+ 
+ <div class="control-group">
+    <label class="control-label" for="inputEmail">名称:</label>
+    <div class="controls">
+      <%= f.text_field :name %> 
+    </div>
+  </div>
+
+
+<div class="control-group">
+    <label class="control-label" for="inputEmail">介绍:</label>
+    <div class="controls">
+       <%= f.text_area :info,:class=>"textarea",:rows=>4 %> 
+    </div>
+</div> 
+
+
+<div class="control-group">
+    <label class="control-label" for="inputEmail">介绍:</label>
+    <div class="controls">
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="file[]"/></span>
+  <span class="fileupload-preview"></span>
+  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+  <button class="fileupload-exists btn btn-info" type="button"  style="float: none">添加照片</button>
+</div>
+</div>
+</div>
+
+<div class="control-group">
+   
+    <div class="controls">
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="file1[]" /></span>
+  <span class="fileupload-preview"></span>
+  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+  <button class="fileupload-exists btn btn-info" type="button"  style="float: none">添加照片</button>
+</div>
+</div>
+</div>
+
+
+<div class="control-group">
+  <div class="controls">
+    <button type="submit" class="btn btn-primary">提交</button>
+  </div>
+</div>
+ 
+<% end %>
+
+   

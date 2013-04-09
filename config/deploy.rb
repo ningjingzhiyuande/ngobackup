@@ -2,7 +2,6 @@
 require 'capistrano/ext/multistage'
 set :stages, %w(development production)
 set :default_stage, 'development'
-
 # 扩展bundle管理
 require 'bundler/capistrano'
 set :bundle_flags, '--no-deployment --quiet'
@@ -80,8 +79,8 @@ namespace :deploy do
     end
   end
 
-  task :compile_assets, :roles => :web do
-    run "cd #{current_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+  task :compile_assets, :roles => :app do
+    run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
   end
 
   task :clean_git_cache, :roles => :app do
@@ -145,6 +144,6 @@ end
 after('bundle:install', 'bundle:gemfilelock')
 
 before('deploy:finalize_update', 'deploy:links')
-after("deploy:finalize_update","bundle:compile_assets")
+after("deploy:finalize_update","deploy:compile_assets")
 after('deploy:update', 'deploy:migrate')
 #after('deploy:update', 'deploy:bg')
