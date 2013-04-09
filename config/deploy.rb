@@ -80,7 +80,7 @@ namespace :deploy do
   end
 
   task :compile_assets, :roles => :app do
-    run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
+    run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
   end
 
   task :clean_git_cache, :roles => :app do
@@ -144,6 +144,6 @@ end
 after('bundle:install', 'bundle:gemfilelock')
 
 before('deploy:finalize_update', 'deploy:links')
-after("deploy:finalize_update","deploy:compile_assets")
+#after("deploy:finalize_update","deploy:compile_assets")
 after('deploy:update', 'deploy:migrate')
 #after('deploy:update', 'deploy:bg')
