@@ -36,7 +36,7 @@ gem 'mini_magick'
 # Use unicorn as the app server
 group :production do
   gem 'unicorn'
-  gem 'bluepill'
+  gem 'bluepill','0.0.60'
 end
 
 # Deploy with Capistrano
