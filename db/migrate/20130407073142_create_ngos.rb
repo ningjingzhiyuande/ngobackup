@@ -3,6 +3,7 @@ class CreateNgos < ActiveRecord::Migration
     create_table :ngos do |t|
       t.string :name
       t.text :info
+      t.string :url
       t.integer :position
 
       t.timestamps

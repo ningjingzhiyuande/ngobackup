@@ -4,7 +4,7 @@
   <!-- google map -->
   <div class="map-holder">
     <div class="map-container">
-      <iframe class="map" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=zh-cn&amp;geocode=&amp;q=Beijing,+china&amp;aq=0&amp;oq=M%C3%BCnchen&amp;sll=37.0625,-95.677068&amp;sspn=53.212719,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=Munich,+Upper+Bavaria,+Bavaria,+Germany&amp;t=m&amp;ll=48.23565,11.596069&amp;spn=0.347588,2.635345&amp;z=10&amp;iwloc=A&amp;output=embed"></iframe>
+      <iframe class="map" src="http://maps.google.com/maps?f=q&amp;q=北京朝阳区&amp;hnear=北京朝阳区建国路甲92号世茂大厦&amp;source=s_q&amp;hl=zh-cn&amp;geocode=&amp;q=Beijing,+china&amp;aq=0&amp;oq=M%C3%BCnchen&amp;ie=UTF8&amp;hq=&amp;t=m&amp;spn=0.347588,2.635345&amp;z=10&amp;iwloc=A&amp;output=embed"></iframe>
       <!-- end google map --> 
     </div>
     <!--map-container ends here--> 
@@ -23,9 +23,9 @@
       <h3>Blog Navigation</h3>
       <div class="boxtwosep"></div>
       <ul class="contactsidebarList">
-        <li>北京市朝阳区世茂大厦12层</li>
-        <li>Phone: 136-0130-0264</li>
+        <li>北京朝阳区建国路甲92号世茂大厦</li>
         <li>QQ: 281471014</li>
+        
         <li>Email: <a href="#" title="">ngobackup@gmail.com</a></li>
       </ul>
     </section>
@@ -40,26 +40,29 @@
   <!-- one_third ends here -->
   <div class="two_third lastcolumn contact1">
     <div id="contactForm">
-      <h2>Leave a comment</h2>
+      <h2>留言</h2>
       <div class="sepContainer"></div>
-      <form action="#" method="post" id="contact_form">
+      <div class="msg"></div>
+      <form action="/contacts" method="post" id="contact_form">
+
+          <input type="hidden" name="contact[item_type]" value="Message"/>
         <div class="name">
           <label for="name">Your Name:</label>
          <!-- <p> Please enter your full name</p>-->
-          <input id=name name=email type=text placeholder="e.g. Mr. John Smith" required />
+          <input id="name" name="contact[name]" type="text" placeholder="e.g. Mr. John Smith" required />
         </div>
         <div class="email">
           <label for="email">Your Email:</label>
          <!-- <p> Please enter your email address</p>-->
-          <input id=email name=email type=email placeholder="example@domain.com" required />
+          <input id=email name="contact[email]" type=email placeholder="example@domain.com" required />
         </div>
         <div class="message">
           <label for="message">Your Message:</label>
         <!--  <p> Please enter your question</p>-->
-          <textarea id=message name=message rows=6 cols=10 required></textarea>
+          <textarea id=message name="contact[content]" rows=6 cols=10 required></textarea>
         </div>
         <div id="loader">
-          <input type="submit" value="Submit" />
+          <input type="submit" value="提交留言" class="submit_contact_form" />
         </div>
       </form>
     </div>

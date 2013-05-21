@@ -1,17 +1,33 @@
 Itbackup::Application.routes.draw do
 
+
+
+  devise_for :users, :controllers => { :omniauth_callbacks => :omniauth_callbacks }, :skip => [:registrations, :confirmations, :sessions, :passwords]
+
+
   namespace :admin do
+    resources :posts,:only=>[:index,:destroy]
+    resources :home_pics
+    resources :blogs,:only=>[:index,:create]
     resources :ngos
+    resources :cases do
+      member do
+        get :images
+        post :attach_images
+      end
+    end
+    resources :assets
+    root :to=>"ngos#index"
   end
 
 
-  resources "home",:controller=>"home"
-  resources "ngo",:controller =>"ngo"
-  resources "blog",:controller =>"blog"
-  resources "about",:controller =>"about"
-  resources "cases"
-  resources "contacts"
-  resources "supports"
+  resources "home",:controller=>"home",:only=>[:index]
+  resources "ngo",:controller =>"ngo",:only=>[:index]
+  resources "blogs",:only=>[:index,:show,:new,:create]
+  resources "about",:controller =>"about",:only=>[:index]
+  resources "cases",:only=>[:index]
+  resources "contacts",:only=>[:index,:create]
+  resources "supports",:only=>[:index]
   root :to=> "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,7 +79,7 @@ Itbackup::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-
+ 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

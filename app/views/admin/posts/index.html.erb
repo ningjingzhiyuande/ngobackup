@@ -1,0 +1,35 @@
+<h3>评论留言列表</h3>
+<table class="table table-bordered table-striped table-hover">
+    <colgroup>
+        <col class="span1">
+        <col class="span1">
+        <col class="span1">
+        <col class="span7">
+        <col class="span1">
+    </colgroup>
+    <thead >
+      <tr >
+        <th>类型</th>
+        <th>名称</th>
+        <th>邮箱</th>
+        <th>内容</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@posts.each do |post|%>
+      <tr>
+        <td>
+           <code><%=post.item_type=="Blog" ? link_to("Blog",blog_path(post.item_id)) : "Message"%></code>
+        </td>
+        <td>
+           <code><%=post.name%></code>
+        </td>
+        <td><%=post.email%></td>
+         <td><%=raw post.content%></td>
+        <td><%=link_to "删除",admin_post_path(post),:method=>"delete",:confirm=>"确认此操作"%></td>
+      </tr>
+      <%end%>           
+    </tbody>
+</table>
+

@@ -1,4 +1,4 @@
-<h3>Listing admin_ngos</h3>
+<h3>公益组织列表</h3>
 <table class="table table-bordered table-striped table-hover">
     <colgroup>
         <col class="span1">
@@ -19,7 +19,7 @@
            <code><%=ngo.name%></code>
         </td>
         <td><%=ngo.info%></td>
-        <td>修改</td>
+        <td><%=link_to "修改",edit_admin_ngos_path(ngo)%></td>
       </tr>
       <%end%>           
     </tbody>
@@ -27,4 +27,4 @@
 
 
 
-<%= link_to 'New Ngo', new_admin_ngo_path %>
+<%= link_to '添加NGO', new_admin_ngo_path %>

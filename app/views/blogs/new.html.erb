@@ -1,0 +1,43 @@
+<!-- Single Blog Content Part ==================================================
+================================================== -->
+<%=javascript_include_tag :kindeditor%>
+<div class="blankSeparator"></div>
+<div class="container singleblog"> 
+  <!-- Blog Post ==================================================
+================================================== -->
+  <div class="two_third">
+   
+      
+      <%=form_for(@blog)  do |f|%>
+        <h2>添加新日志</h2>
+        <div class="title">
+          <label for="name">标题:</label>
+          <input id=name name=email type=text placeholder="标题" required />
+        </div>
+        <div class="category">
+          <label for="category">分类:</label>
+          <%=f.select :category_id,Blog.categories.to_a,{},:class=>"select_tag"%>
+        </div>
+        <div class="info">
+          <label for="message">正文:</label>
+          <%= f.kindeditor :content,{:width=>"500px",:minWidth=>"200px", :simple_mode => true}%>
+          
+        </div>
+        <div class="tags">
+          <label for="category">标签:</label>
+          <input  name="category" type="text" placeholder="重要标签提取,以逗号分割"  />
+        </div>
+        <div class="tags">
+          <label for="category">封面图:</label>
+          <%=f.file_field :cover,:required=>true%>
+        </div>
+
+        <div id="loader"> <input type="submit" value="发表博客" /></div>
+      <%end%>
+
+  </div>
+
+  <%=render "blog_right"%>
+</div>
+<!-- container ends here -->
+

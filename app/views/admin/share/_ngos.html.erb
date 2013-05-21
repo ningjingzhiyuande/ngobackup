@@ -2,8 +2,20 @@
     <ul class="nav nav-list">
     	<li><h3>后台管理列表</h3></li>
         <li class="nav-header">公益组织项目管理</li>
-        <li><%= link_to "公益组织列表", "/path1"  %></li>
-        <li><%= link_to "添加公益项目", "/path2"  %></li>
+        <li><%= link_to "公益组织列表", "/admin/ngos"  %></li>
+        <li><%= link_to "添加公益项目", "/admin/ngos/new"  %></li>
+        <li class="nav-header">成功案例管理</li>
+        <li><%= link_to "成功案例列表", "/admin/cases"  %></li>
+        <li><%= link_to "添加成功案例", "/admin/cases/new"  %></li>
+
+        <li class="nav-header">首页管理</li>
+        <li><%= link_to "首页大图推荐", "/admin/home_pics"  %></li>
+
+        <li class="nav-header">博客管理</li>
+        <li><%= link_to "博客列表", "/admin/blogs"  %></li>
+        <li class="nav-header">评论留言管理</li>
+        <li><%= link_to "评论留言", "/admin/posts"  %></li>
+        
         
     </ul>
 </div><!--/.well -->

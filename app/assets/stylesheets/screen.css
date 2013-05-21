@@ -357,7 +357,6 @@ html[xmlns] .slides {
 	width: 13px;
 	height: 13px;
 	display: block;
-	background: url(theme/bg_control_nav.png) no-repeat;
 	cursor: pointer;
 	text-indent: -999em;
 }
@@ -866,6 +865,17 @@ ul.blogList li {
 	border-bottom:1px solid #fff;
 	background: url(/images/raster.png) left no-repeat;
 }
+ul.blogLogin li{
+	padding: 10px 20px 0px;
+	border-bottom:1px solid #fff;
+	background: url(/images/raster.png) left no-repeat;
+
+}
+.blogLogin img{
+	background:#fff;
+	padding:0px;
+	margin-left:5px;
+}
 li.activenavigationItem {
 	font-weight: bold;
 	color: #8990a3;
@@ -1144,16 +1154,18 @@ form#contact_form input[type="submit"]:hover {
 .new_blog h2{
 	text-align: center;
 }
-.new_blog div{padding:10px 0px 0 20px;width:100%;}
+.new_blog div{padding:10px 0px 0 20px;}
 .new_blog div label{width:10%;float:left;color:red;height: 30px;
 	padding: 10px;text-align: right;}
 .new_blog input[type="text"] {	
 	width: 400px;
 }
+.new_blog .info div{padding:0px;}
+.new_blog .info .ke-container{width:400px;}
 .new_blog textarea {
 	border: 1px solid #e1e5e9;
-	width: 400px;
 	margin-bottom:20px;
+	width: 400px;
 }
 .new_blog input[type="text"]:focus, .new_blog input[type="text"]:hover, .new_blog textarea:focus, .new_blog textarea:hover, .new_blog input[type="text"]:focus, .new_blog input[type="text"]:hover, .new_blog textarea:focus, .new_blog textarea:hover {
 	background-color:#efefef;
@@ -1376,4 +1388,5 @@ margin-top: 13px;
 }
 }
 
+.select_tag{padding-top:5px;}
 

@@ -1,0 +1,43 @@
+<h3>网站博客管理</h3>
+<table class="table table-bordered table-striped table-hover">
+    <colgroup>
+        <col class="span1">
+        <col class="span7">
+        <col class="span1">
+    </colgroup>
+    <thead >
+      <tr >
+        <th>名称</th>
+        <th>详情</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@blogs.each do |blog|%>
+      <tr>
+        <td>
+           <code><%=blog.title%></code>
+        </td>
+        <td><%=raw blog.content%></td>
+        <td><%=link_to "删除",admin_case_path(blog),:method=>"delete",:confirm=>"确认此操作"%> | <a href="javascript:void(0);" value="<%=blog.id%>"  class="popup"> 添加图片</a></td>
+      </tr>
+      <%end%>           
+    </tbody>
+</table>
+
+<script>
+ $(function(){
+    $(".popup").click(function(){
+        var id = $(this).attr("value");
+        $.layer({
+          type : 2,
+          title : ['上传轮播图片',true],
+          iframe : {src : '/admin/blogs/'+id},
+          area : ['750px' , '466px'],
+         offset : ['100px','']
+        });
+
+    })
+
+ })
+</script>

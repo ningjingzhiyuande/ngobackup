@@ -1,0 +1,49 @@
+<h3>成个案例管理</h3>
+<table class="table table-bordered table-striped table-hover">
+    <colgroup>
+        <col class="span1">
+        <col class="span7">
+        <col class="span1">
+        <col class="span1">
+    </colgroup>
+    <thead >
+      <tr >
+        <th>名称</th>
+        <th>详情</th>
+        <th>地址</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@cases.each do |ca|%>
+      <tr>
+        <td>
+           <code><%=ca.name%></code>
+        </td>
+        <td><%=raw ca.info%></td>
+        <td><%=raw ca.url%></td>
+        <td><%=link_to "修改",edit_admin_case_path(ca)%> | <%=link_to "删除",admin_case_path(ca),:method=>"delete",:confirm=>"确认此操作"%> | <a href="javascript:void(0);" value="<%=ca.id%>"  class="popup"> 添加轮播图</a></td>
+      </tr>
+      <%end%>           
+    </tbody>
+</table>
+
+
+
+<%= link_to '添加案例', new_admin_case_path %>
+<script>
+ $(function(){
+    $(".popup").click(function(){
+        var id = $(this).attr("value");
+        $.layer({
+          type : 2,
+          title : ['上传轮播图片',true],
+          iframe : {src : '/admin/cases/'+id+'/images'},
+          area : ['750px' , '466px'],
+         offset : ['100px','']
+        });
+
+    })
+
+ })
+</script>

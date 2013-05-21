@@ -1,9 +1,17 @@
+<%=javascript_include_tag :kindeditor%>
 <%= form_for([:admin,@ngo],:html=>{:class=>"form-horizontal"}) do |f| %>
  
  <div class="control-group">
     <label class="control-label" for="inputEmail">名称:</label>
     <div class="controls">
-      <%= f.text_field :name %> 
+      <%= f.text_field :name,:required=>true  %> 
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">链接:</label>
+    <div class="controls">
+      <%= f.text_field :url,:required=>true %> 
     </div>
   </div>
 
@@ -11,34 +19,18 @@
 <div class="control-group">
     <label class="control-label" for="inputEmail">介绍:</label>
     <div class="controls">
-       <%= f.text_area :info,:class=>"textarea",:rows=>4 %> 
+        <%= f.kindeditor :info,{:width=>"500px",:minWidth=>"200px", :simple_mode => true }%>
     </div>
 </div> 
 
 
 <div class="control-group">
-    <label class="control-label" for="inputEmail">介绍:</label>
-    <div class="controls">
-<div class="fileupload fileupload-new" data-provides="fileupload">
-  <span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="file[]"/></span>
-  <span class="fileupload-preview"></span>
-  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-  <button class="fileupload-exists btn btn-info" type="button"  style="float: none">添加照片</button>
-</div>
-</div>
+  <label class="control-label" for="inputEmail">上传图片:</label>
+  <div class="controls">
+      <%=file_field_tag "file"%>   
+  </div>
 </div>
 
-<div class="control-group">
-   
-    <div class="controls">
-<div class="fileupload fileupload-new" data-provides="fileupload">
-  <span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="file1[]" /></span>
-  <span class="fileupload-preview"></span>
-  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-  <button class="fileupload-exists btn btn-info" type="button"  style="float: none">添加照片</button>
-</div>
-</div>
-</div>
 
 
 <div class="control-group">

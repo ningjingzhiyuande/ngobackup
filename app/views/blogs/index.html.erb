@@ -1,0 +1,47 @@
+<!-- Blog Content Part ==================================================
+================================================== -->
+<div class="blankSeparator"></div>
+<div class="container blog">
+  <div class="two_third">
+  <%@blogs.each do |blog|%>
+      <section class="post">
+         <h2><%=blog.title%></h2>
+         <p class="meta">
+            <span class="left">Date: <strong><%=blog.created_at.strftime("%Y/%m/%d")%></strong></span><span class="left">posted by <strong><%=blog.try(:user).try(:nickname)%></strong></span>
+            <span class="left tags"><%=blog.tags%></span> 
+           <!-- <span class="left comment"> <a href="#" title="">46 Comments</a></span> -->
+          </p>
+       <%blog.assets.each do |asset|%>
+          <%=link_to image_tag(asset.avatar.url,:class=>"prettyPhoto[gal]"),blog%>
+       <%end%>
+       <p><%=blog.content%></p>
+       <h4>Tags: <%=blog.tags%></h4>
+       <a href="/blogs/<%=blog.id%>" class="buttonhome">&rarr; more</a> 
+    </section>
+
+  <%end%>
+   <div class="container">
+  <div class="blankSeparator"><!-- --></div>
+  <div id="pagination" class="fl"> 
+    <%=paginate @blogs%>
+    <!-- Pagination 
+    <ul class="pagination">
+      <li class='first-page'><a href='#'>&laquo;</a></li>
+      <li><a href='#' >&lsaquo;</a></li>
+      <li><a href="#" id="currentPage">1</a></li>
+      <li><a href="portfolio.html">2</a></li>
+      <li><a href="portfolio.html">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href='#' >&rsaquo;</a></li>
+      <li class='last-page'><a href='#'>&raquo;</a></li>
+    </ul>-->
+  </div>
+  <!-- end pagination --> 
+</div>
+<!-- end centerContainer -->
+
+  </div>
+  <!-- ten columns ends here --> 
+  <%#=render "blog_right_login"%>
+  <%#=render "blog_right"%>
+</div>

@@ -5,32 +5,40 @@
   <h2>公益组织</h2>
   <p>非营利组织是与政府,企业相对应的组织形式,一般指除了政府和企业之外的一切志愿团体,社会组织或民间组织.非营利组织致力于开展互助性和公益性的活动,解决社会问题,满足社会需要.非营利组织在不同国家和地区或在不同语境下也称为非政府组织(Non-Government Organization,NGO),第三部门(The Third Sector),公民社会(Givil Society),志愿组织(Voluntary Organization)和草根组织(Grass Roots Organization).
   </p>
+  <%@ngos.each do |ngo|%>
   <div class="one_third">
-    <img src="images/cases/cishan.jpg" />
+    <div class="flexslider">
+      <ul class="slides">
+        <%ngo.assets.each do |asset|%>
+          <%=asset.avatar.url%>
+        <%end%>
+      </ul>
+    </div>
   </div>
   <div class="two_third lastcolumn">
-    <p> 中华慈善总会成立于1994年，是经中国政府批准依法注册登记，由热心慈善事业的公民、法人及其他社会组织志愿参加的全国性非营利公益社会团体，目前在全国拥有273个会员单位。其宗旨是：发扬人道主义精神，弘扬中华民族扶贫济困的传统美德，帮助社会上不幸的个人和困难群体，开展多种形式的社会救助工作。中华慈善总会第一任会长是崔乃夫先生，第二任会长是阎明复先生，现任会长为第九届、第十届全国政协常委、民政部原党组副书记、副部长范宝俊先生。中华慈善总会名誉会长方润华。  中华慈善总会成立于1994年，是经中国政府批准依法注册登记，由热心慈善事业的公民、法人及其他社会组织志愿参加的全国性非营利公益社会团体，目前在全国拥有273个会员单位。其宗旨是：发扬人道主义精神，弘扬中华民族扶贫济困的传统美德，帮助社会上不幸的个人和困难群体，开展多种形式的社会救助工作。中华慈善总会第一任会长是崔乃夫先生，第二任会长是阎明复先生，现任会长为第九届、第十届全国政协常委、民政部原党组副书记、副部长范宝俊先生。中华慈善总会名誉会长方润华。
-    </p>
+    <%=ngo.content%>
   </div>
+  <%end%>
 
-  <div class="one_third">
-    <h3>Work Experience</h3>
-  </div>
-  <div class="two_third lastcolumn">
-    <p><strong>2009-2011</strong> - Mauris laoreet nulla at dui consectetur vel elementum justo tempor. Sed erat dui, sagittis a pharetra ut, tempor erat dui, sagittis a pharetra ut, tempor vel turpis. Vestibulum blandit ultricies tempus.</p>
-    <p><strong>2011-2012</strong> - Mauris laoreet nulla at dui consectetur vel elementum justo tempor. Sed erat dui, sagittis a pharetra ut, tempor erat dui, sagittis a pharetra ut, tempor vel turpis. Vestibulum blandit ultricies tempus.</p>
-     <p><strong>2011-2012</strong> - Mauris laoreet nulla at dui consectetur vel elementum justo tempor. Sed erat dui, sagittis a pharetra ut, tempor erat dui, sagittis a pharetra ut, tempor vel turpis. Vestibulum blandit ultricies tempus.</p>
-      <p><strong>2011-2012</strong> - Mauris laoreet nulla at dui consectetur vel elementum justo tempor. Sed erat dui, sagittis a pharetra ut, tempor erat dui, sagittis a pharetra ut, tempor vel turpis. Vestibulum blandit ultricies tempus.</p>
-  </div>
 
-  <div class="one_third">
-    <h3>Work Experience</h3>
+<div class="container">
+  <div class="blankSeparator"><!-- --></div>
+  <div id="pagination" class="fl"> 
+    <%=paginate @ngos%>
+    <!-- Pagination 
+    <ul class="pagination">
+      <li class='first-page'><a href='#'>&laquo;</a></li>
+      <li><a href='#' >&lsaquo;</a></li>
+      <li><a href="#" id="currentPage">1</a></li>
+      <li><a href="portfolio.html">2</a></li>
+      <li><a href="portfolio.html">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href='#' >&rsaquo;</a></li>
+      <li class='last-page'><a href='#'>&raquo;</a></li>
+    </ul>-->
   </div>
-  <div class="two_third lastcolumn">
-    <p><strong>2009-2011</strong> - Mauris laoreet nulla at dui consectetur vel elementum justo tempor. Sed erat dui, sagittis a pharetra ut, tempor erat dui, sagittis a pharetra ut, tempor vel turpis. Vestibulum blandit ultricies tempus.</p>
-    <p><strong>2011-2012</strong> - Mauris laoreet nulla at dui consectetur vel elementum justo tempor. Sed erat dui, sagittis a pharetra ut, tempor erat dui, sagittis a pharetra ut, tempor vel turpis. Vestibulum blandit ultricies tempus.</p>
-  </div>
-
+  <!-- end pagination --> 
+</div>
   <!--
   <div class="one_third">
     <h3>Skills</h3>

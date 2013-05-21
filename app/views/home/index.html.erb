@@ -2,9 +2,10 @@
 ================================================== -->
 <div class="flexslider">
   <ul class="slides">
-    <li> <a href="#"><img src="/images/3.jpg" alt=""/></a> </li>
-    <li> <img src="/images/flexslider/6.jpg" alt="" /> </li>
-    <li> <a href="#"><img src="/images/flexslider/4.jpg" alt="" /></a>
+    <%@pics.each do |pic|%>
+       <li> <%=image_tag pic.avatar.url%></a>
+    <%end%>
+    
     
     </li>
   </ul>
@@ -38,22 +39,14 @@
 </style>
 <div class="container clients">
   <div class="sepContainer"></div>
-  <h2>客户</h2>
-  <div class="one_sixth" > <img src="/images/ngo/shunfengche.png"  width="140" height="82" alt=""/> 
-    <a href="http://www.shunfengche.org" title="" target="blank" class="buttonhome">顺风车</a>
+  <h2>成功案例</h2>
+  <%@cases.each do |c|%>
+     <div class="one_sixth" ><%=image_tag c.min_image.url,{:width=>140,:height=>82}%>
+      <%=link_to c.name,c.url,:html=>{"target"=>"blank"}%>
   </div>
-  <!-- end one_sixth -->
-  <div class="one_sixth"> <img src="/images/ngo/dazuoxiaoti.png" alt=""/> 
-    <a href="http://www.shunfengche.org" title="" target="blank" class="buttonhome">小题大作</a>
-  </div>
-  <!-- end one_sixth -->
-  <div class="one_sixth"> <img src="/images/client3.jpg" alt=""/> </div>
-  <!-- end one_sixth -->
-  <div class="one_sixth"> <img src="/images/client4.jpg" alt=""/> </div>
-  <!-- end one_sixth -->
-  <div class="one_sixth"> <img src="/images/client5.jpg" alt=""/> </div>
-  <!-- end one_sixth -->
-  <div class="one_sixth lastcolumn"> <img src="/images/client6.jpg" alt=""/> </div>
+  <%end%>
+ 
+ <!--最后一行要注意 lastcolumn-->
   <!-- end one_sixth lastCol --> 
 </div>
 <!-- end container --> 
@@ -62,26 +55,15 @@
 <div class="container boxthree">
   <div class="sepContainer1"><!-- --></div>
   <div class="blankSeparator"></div>
+  <%@blogs.each do |blog|%>
   <div class="one_third">
-    <section class="boxthreeleft"> <img src="/images/home/1.png" alt=""/>
-      <h3>Natural beauty</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <a class ="simple" href="#">+ Learn more</a> </section>
+    <section class="boxthreeleft"><%=image_tag blog.cover.url%>
+      <h3><%=blog.title%></h3>
+      <p><%=raw blog.content%></p>
+
+      <a class ="simple" href="/blogs/<%=blog.id%>">+ more</a> </section>
   </div>
-  <!-- one-third column ends here -->
-  <div class="one_third">
-    <section class="boxthreecenter"> <img src="/images/home/2.png" alt=""/>
-      <h3>Fashion Love</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <a class ="simple" href="#">+ Learn more</a> </section>
-  </div>
-  <!-- one-third column ends here -->
-  <div class="one_third lastcolumn">
-    <section class="boxthreeright"> <img src="/images/home/3.png" alt=""/>
-      <h3>Modern Design Interior</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <a class ="simple" href="#">+ Learn more</a> </section>
-  </div>
+  <%end%>
   <!-- one-third column ends here --> 
 </div>
 <!-- container ends here -->

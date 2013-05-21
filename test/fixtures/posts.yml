@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
+  name: MyString
+  email: MyString
+  content: MyText
+  item_id: 1
+  item_type: MyString
+  status: 1
 
 two:
-  title: MyString
-  description: MyText
+  name: MyString
+  email: MyString
+  content: MyText
+  item_id: 1
+  item_type: MyString
+  status: 1
