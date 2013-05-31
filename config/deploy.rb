@@ -1,7 +1,7 @@
 # 多环境发布
 require 'capistrano/ext/multistage'
-set :stages, %w(development production)
-set :default_stage, 'development'
+set :stages, %w(master production)
+set :default_stage, 'master'
 # 扩展bundle管理
 require 'bundler/capistrano'
 set :bundle_flags, '--no-deployment --quiet'
@@ -40,6 +40,7 @@ namespace :bundle do
   task :prepare, :roles => :app do
     run "ln -sfT #{shared_path}/.bundle #{latest_release}/.bundle"
     run "cp -f #{shared_path}/Gemfile.lock #{latest_release}/"
+    run "cp -f #{shared_path}/database.yml #{latest_release}/config/database.yml"
     
     # 如果Gemfile中rails版本更改，自动bundle:install会依赖失败
     # 此时则需要传入-s update=*参数，触发bundle update语句
@@ -115,12 +116,12 @@ namespace :deploy do
   
   task :links, :roles => :app do
     # 建立配置文件链接
-    # run "ln -sf #{config}/database.yml #{latest_release}/config/database.yml"
+     run "ln -sf #{shared_path}/database.yml #{latest_release}/config/database.yml"
     # run "ln -sf #{config}/mongoid.yml #{latest_release}/config/mongoid.yml"
     # run "ln -sf #{root_path}/web/file/bdsitemap.txt #{latest_release}/public/bdsitemap.txt"
 
     # 建立文件目录链接
-    run "ln -sfT #{root_path}/web/file/upload #{latest_release}/public/upload"
+    #run "ln -sfT #{root_path}/web/file/upload #{latest_release}/public/upload"
     # run "ln -sfT #{root_path}/web/file/log/quiz #{latest_release}/log/quiz"
     
     # assets folder
