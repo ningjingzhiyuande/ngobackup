@@ -30,7 +30,7 @@ working_directory "#{APP_PATH}/current" # available in 0.94.0+
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 listen "#{APP_PATH}/shared/sockets/unicorn.sock", :backlog => 1024
-listen 8080, tcp_nopush: true, tcp_nodelay: true
+listen 9000, tcp_nopush: true, tcp_nodelay: true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 60

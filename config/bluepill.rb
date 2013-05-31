@@ -1,4 +1,4 @@
-Bluepill.application(:rails, log_file: "/var/log/bluepill.log") do 
+Bluepill.application("itbackup", log_file: "/var/log/bluepill_itbackup.log") do 
   RAILS_ROOT = '/itbackup/web/current/'
 
   uid = gid = "www"
