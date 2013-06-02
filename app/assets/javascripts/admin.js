@@ -16,6 +16,5 @@
 //= require admin/jqBootstrapValidation
 //= require admin/layer.min
 //= require admin/bootstrap
-//= require jquery-fileupload
 
 
