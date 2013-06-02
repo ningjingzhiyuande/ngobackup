@@ -49,7 +49,7 @@ end
 # Use unicorn as the app server
 group :production do
   gem 'unicorn'
-  gem 'bluepill','0.0.60'
+  gem 'bluepill','0.0.63'
   gem 'capistrano'
 end
 
