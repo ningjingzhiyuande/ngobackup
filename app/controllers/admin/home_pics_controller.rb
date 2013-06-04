@@ -1,4 +1,4 @@
-class Admin::HomePicsController <  Admin::BaseController
+class Admin::HomePicsController <  Admin::ApplicationController
   def index
 
   	 @pics = Asset.where("item_type=?","Home")

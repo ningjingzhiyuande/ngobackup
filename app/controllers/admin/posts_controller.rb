@@ -1,4 +1,4 @@
-class Admin::PostsController < Admin::BaseController
+class Admin::PostsController < Admin::ApplicationController
   def index
   	@posts =  Post.page(params[:page]).per(10)
   end

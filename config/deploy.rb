@@ -95,14 +95,14 @@ namespace :deploy do
   
   # 重启服务
   task :start do
-    run "cd #{current_path} && bundle exec bluepill --no-privileged start unicorn RAILS_ENV=#{rails_env}"
+    run "cd #{current_path} && bundle exec bluepill  itbackup --no-privileged start unicorn RAILS_ENV=#{rails_env}"
   end
   task :stop do
-    run "cd #{current_path} && bundle exec bluepill --no-privileged stop unicorn RAILS_ENV=#{rails_env}"
+    run "cd #{current_path} && bundle exec bluepill itbackup --no-privileged stop unicorn RAILS_ENV=#{rails_env}"
   end
   task :restart, :roles => :web do
     if rails_env == "production"
-      run "cd #{current_path} && bundle exec bluepill --no-privileged restart unicorn RAILS_ENV=#{rails_env}"
+      run "cd #{current_path} && bundle exec bluepill itbackup --no-privileged restart unicorn RAILS_ENV=#{rails_env}"
     else
       deploy.restart_unicorn
     end

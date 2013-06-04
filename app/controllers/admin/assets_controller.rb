@@ -1,4 +1,4 @@
-class Admin::AssetsController < Admin::BaseController
+class Admin::AssetsController < Admin::ApplicationController
   
   def destroy
   	@asset=Asset.find params[:id]

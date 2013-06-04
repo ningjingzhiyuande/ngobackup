@@ -1,4 +1,4 @@
-class Admin::CasesController < Admin::BaseController
+class Admin::CasesController < Admin::ApplicationController
   #respond_to :html 
  # layout "layer" ,:only=>[:images]
   

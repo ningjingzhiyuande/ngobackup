@@ -12,7 +12,7 @@
 # more will usually help for _short_ waits on databases/caches.
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-worker_processes rails_env == "production" ? 5 : 2
+worker_processes rails_env == "production" ? 4 : 2
 
 APP_PATH = '/itbackup/web'
 

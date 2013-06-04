@@ -1,4 +1,4 @@
-class Admin::NgosController < Admin::BaseController
+class Admin::NgosController < Admin::ApplicationController
   # GET /admin/ngos
   # GET /admin/ngos.json
   def index

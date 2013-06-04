@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require admin/bootstrap_and_overrides
- *= require admin/jquery.fileupload-ui
+ *= require admin/skin/layer
  *= require_tree .
  */
