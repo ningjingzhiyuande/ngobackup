@@ -12,12 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require screen
-//= require jquery.flexslider-min
-//= require poshytip/src/jquery-migrate-1.2.1.min
-//= require poshytip/src/jquery.poshytip.min
-//= require hoverIntent
-//= require jquery.tweetable
-//= require tabs
-//= require superfish
-//= require modernizr.custom.29473
+//= require_tree ./front-end
