@@ -80,8 +80,8 @@ namespace :deploy do
     end
   end
 
-  task :compile_assets, :roles => :app do
-    run "cd #{latest_release} && RAILS_ENV=#{rails_env}  #{rake}  assets:precompile"
+  task :compile_assets, :roles => :web do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env}  #{rake}  assets:precompile"
   end
 
   task :clean_git_cache, :roles => :app do
