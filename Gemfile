@@ -12,7 +12,7 @@ group 'assets' do
 end
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
- gem 'jquery-fileupload-rails'
+gem 'jquery-fileupload-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 

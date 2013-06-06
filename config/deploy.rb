@@ -81,7 +81,7 @@ namespace :deploy do
   end
 
   task :compile_assets, :roles => :app do
-    run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
+    run "cd #{latest_release} && RAILS_ENV=#{rails_env}  #{rake}  assets:precompile"
   end
 
   task :clean_git_cache, :roles => :app do
