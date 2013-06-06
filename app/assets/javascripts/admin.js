@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require admin/jqBootstrapValidation
+//= require jquery-fileupload
 //= require admin/layer.min
 //= require admin/bootstrap
 

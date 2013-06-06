@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require admin/bootstrap_and_overrides
- *= require admin/skin/layer
+
  *= require_tree .
  */
