@@ -7,12 +7,12 @@ group 'assets' do
   gem 'sass-rails',   '~> 3.2.3'
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'jquery-fileupload-rails'
+ 
   gem 'quiet_assets', :git => 'git://github.com/AgilionApps/quiet_assets.git' 
 end
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
+ gem 'jquery-fileupload-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 

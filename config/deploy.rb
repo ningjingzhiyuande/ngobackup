@@ -145,6 +145,6 @@ end
 after('bundle:install', 'bundle:gemfilelock')
 
 before('deploy:finalize_update', 'deploy:links')
-#after("deploy:finalize_update","deploy:compile_assets")
+after("deploy:finalize_update","deploy:compile_assets")
 after('deploy:update', 'deploy:migrate')
 #after('deploy:update', 'deploy:bg')
