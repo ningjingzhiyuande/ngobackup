@@ -121,7 +121,7 @@ namespace :deploy do
     # run "ln -sf #{root_path}/web/file/bdsitemap.txt #{latest_release}/public/bdsitemap.txt"
 
     # 建立文件目录链接
-    #run "ln -sfT #{root_path}/web/file/upload #{latest_release}/public/upload"
+    run "ln -sfT #{root_path}/web/shared/public/upload #{latest_release}/public/upload"
     # run "ln -sfT #{root_path}/web/file/log/quiz #{latest_release}/log/quiz"
     
     # assets folder
