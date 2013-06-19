@@ -19,6 +19,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 gem 'simple_enum'
 gem 'therubyracer', :platforms => :ruby
+gem 'exejs'
 gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem 'rails_kindeditor'
