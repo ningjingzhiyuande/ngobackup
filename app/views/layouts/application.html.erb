@@ -11,9 +11,8 @@
 ================================================== -->
 
 <meta charset="utf-8">
-<meta name="description" content="Place to put your description text">
 <meta name="author" content="">
-<title><%= content_for?(:title) ? yield(:title) : "Itbackup" %></title>
+<%=display_meta_tags(set_meta_tags)%>
 <%= csrf_meta_tags %>
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

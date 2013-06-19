@@ -36,7 +36,8 @@ gem 'omniauth-qq'
 gem 'omniauth-renren-oauth2'
 gem 'omniauth-weibo-oauth2'
 gem 'kaminari'
-
+# seo
+gem 'meta-tags', :require => 'meta_tags'
 #gem 'macaddr'
 
 
