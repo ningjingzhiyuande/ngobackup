@@ -11,9 +11,9 @@
             <span class="left tags"><%=blog.tags%></span> 
            <!-- <span class="left comment"> <a href="#" title="">46 Comments</a></span> -->
           </p>
-       <%blog.assets.each do |asset|%>
-          <%=link_to image_tag(asset.avatar.url,:class=>"prettyPhoto[gal]"),blog%>
-       <%end%>
+       <%#blog.assets.each do |asset|%>
+          <%=link_to image_tag(blog.cover.url,:class=>"prettyPhoto[gal]"),blog%>
+       <%#end%>
        <p><%=blog.content%></p>
        <h4>Tags: <%=blog.tags%></h4>
        <a href="/blogs/<%=blog.id%>" class="buttonhome">&rarr; more</a> 
