@@ -7,7 +7,7 @@
       <section class="post">
          <h2><%=blog.title%></h2>
          <p class="meta">
-            <span class="left">Date: <strong><%=blog.created_at.strftime("%Y/%m/%d")%></strong></span><span class="left">posted by <strong><%=blog.try(:user).try(:nickname)%></strong></span>
+            <span class="left">Date: <strong><%=blog.created_at.strftime("%Y/%m/%d")%></strong></span><span class="left">posted by <strong><%=blog.user.present? ? blog.try(:user).try(:nickname) : "Admin"%></strong></span>
             <span class="left tags"><%=blog.tags%></span> 
            <!-- <span class="left comment"> <a href="#" title="">46 Comments</a></span> -->
           </p>
