@@ -38,7 +38,7 @@ module Itbackup
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     #config.assets.precompile += ['front-end.js', 'admim/admin.js',"front-end.css","admin/admin.css"]
-    config.assets.precompile += %w(admin.js front-end.js admin/admin.css front-end.css admin/skin/layer.css)
+    config.assets.precompile += %w(admin.js front-end.js kindeditor.js admin/admin.css front-end.css admin/skin/layer.css)
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
