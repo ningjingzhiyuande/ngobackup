@@ -13,6 +13,11 @@ class BlogsController < ApplicationController
      @blog = Blog.new
   end
   def create
-  	redirect_to :action =>"index"
+    blog = Blog.new(params["blog"])
+    if blog.save
+  	  redirect_to :action =>"index"
+    else
+      render action: :new
+    end
   end
 end

@@ -12,7 +12,7 @@
         <h2>添加新日志</h2>
         <div class="title">
           <label for="name">标题:</label>
-          <input id=name name=email type=text placeholder="标题" required />
+          <%=f.text_field :title,:placeholder=>"标题",:required=>true%>
         </div>
         <div class="category">
           <label for="category">分类:</label>
@@ -25,7 +25,8 @@
         </div>
         <div class="tags">
           <label for="category">标签:</label>
-          <input  name="category" type="text" placeholder="重要标签提取,以逗号分割"  />
+           <%=f.text_field :tags,:placeholder=>"重要标签提取,以逗号分割"%>
+          
         </div>
         <div class="tags">
           <label for="category">封面图:</label>
