@@ -14,7 +14,7 @@
        <%#blog.assets.each do |asset|%>
           <%=link_to image_tag(blog.cover.url,:class=>"prettyPhoto[gal]"),blog%>
        <%#end%>
-       <p><%=blog.content%></p>
+       <p><%=raw blog.content%></p>
        <h4>Tags: <%=blog.tags%></h4>
        <a href="/blogs/<%=blog.id%>" class="buttonhome">&rarr; more</a> 
     </section>
