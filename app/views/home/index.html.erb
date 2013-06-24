@@ -58,8 +58,8 @@
   <%@blogs.each do |blog|%>
   <div class="one_third">
     <section class="boxthreeleft"><%=image_tag blog.cover.url%>
-      <h3><%=blog.title%></h3>
-      <p><%=truncate(strip_tags(blog.content),:length=>100)%></p>
+      <h3><%=link_to blog.title,blog%></h3>
+      <p><%=raw truncate(strip_tags(blog.content),:length=>30)%></p>
 
       <a class ="simple" href="/blogs/<%=blog.id%>">+ more</a> </section>
   </div>

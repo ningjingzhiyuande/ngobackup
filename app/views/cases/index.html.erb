@@ -7,7 +7,7 @@
     <div class="flexslider">
       <ul class="slides">
         <%c.assets.each do |asset|%>
-          <li><%=image_tag asset.avatar.url%></li>
+          <li><%=image_tag asset.avatar.url,:width=>630,:height=>300%></li>
         <%end%>
       </ul>
     </div>
