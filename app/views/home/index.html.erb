@@ -59,7 +59,7 @@
   <div class="one_third">
     <section class="boxthreeleft"><%=image_tag blog.cover.url%>
       <h3><%=blog.title%></h3>
-      <p><%=raw blog.content%></p>
+      <p><%=truncate(strip_tags(blog.content),:length=>100)%></p>
 
       <a class ="simple" href="/blogs/<%=blog.id%>">+ more</a> </section>
   </div>

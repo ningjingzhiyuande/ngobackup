@@ -334,7 +334,7 @@ html[xmlns] .slides {
 	left: 0px;
 }
 .flex-direction-nav .flex-disabled {
-	opacity: .3;
+	opacity: 1;
 	filter:alpha(opacity=30);
 	cursor: default;
 }
@@ -403,24 +403,9 @@ span.green {
 }
 .clients img {
 	border-bottom:6px solid #efefef;
-	opacity: 0.5;
-	filter: alpha(opacity=50);
-	-webkit-transition: opacity 0.5s linear;
-	-moz-transition: opacity 0.5s linear;
-	-o-transition: opacity 0.5s linear;
-	-ms-transition: opacity 0.5s linear;
-	transition: opacity 0.5s linear;
 	cursor:pointer;
 }
-.clients img:hover {
-	opacity: 1;
-	filter: alpha(opacity=100);
-	-webkit-transition: opacity 1s linear;
-	-moz-transition: opacity 1s linear;
-	-o-transition: opacity 1s linear;
-	-ms-transition: opacity 1s linear;
-	transition: opacity 1s linear;
-}
+
 /****************************** HOME - Content Part - Box Three ******************************/
 .boxthree .one_third {
 	background:#e1e8ed;
@@ -448,7 +433,7 @@ span.green {
 	transition: opacity 0.5s linear;
 }
 .boxthree img:hover {
-	opacity: 0.7;
+	opacity: 1;
 	filter: alpha(opacity=70);
 	-webkit-transition: opacity 1s linear;
 	-moz-transition: opacity 1s linear;
@@ -811,7 +796,7 @@ li#beauty, li#woman, li#people {
 	margin-bottom:10px;
 }
 .blog img:hover {
-	opacity: 0.7;
+	opacity: 1;
 	filter: alpha(opacity=70);
 	-webkit-transition: opacity 1s linear;
 	-moz-transition: opacity 1s linear;
