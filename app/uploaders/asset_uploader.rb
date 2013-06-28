@@ -31,22 +31,26 @@ class AssetUploader < CarrierWave::Uploader::Base
   end
 
   # 公司主页
-  version :large do
+  version :blog_large do
    # process :manualcrop
-    process resize_to_fill: [230, 160]
+    process resize_to_fill: [630, 300]
   end
 
-  #version :job do
-  #  process :manualcrop
-  #  process resize_to_fill: [155, 35]
-  #end
-
-  #  process :resize_to_limit => [300, 300]
-
-  version :medium do
-    #process :manualcrop
-    process resize_to_fill: [86, 60]
+  version :blog_small do
+   # process :manualcrop
+    process resize_to_fill: [420, 242]
   end
+
+  version :cases_large do
+   # process :manualcrop
+    process resize_to_fill: [570, 270]
+  end
+
+  version :case_small do
+   # process :manualcrop
+    process resize_to_fill: [420, 242]
+  end
+
 
   #version :feed do
   #  process :manualcrop
