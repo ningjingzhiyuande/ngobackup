@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :avatar
       t.string :access_token
       t.string :access_token_secret
-      #t.string :encrypted_password,  :default => ""
+      t.string :encrypted_password,  :default => ""
 
       
 

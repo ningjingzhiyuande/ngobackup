@@ -4,11 +4,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_oauth(request.env["omniauth.auth"], current_user)
       if @user.persisted?
         flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
-        session[:previous_url] = @user.mobile.blank? ? "/account/oauth_signup" : "/dashboard"
+        session[:previous_url] = "/blogs/new"
         sign_in_and_redirect @user, :event => :authentication
       else
         #session["devise.google_data"] = request.env["omniauth.auth"]
-        redirect_to new_user_registration_url
+        redirect_to "/blogs"
       end
   end
   

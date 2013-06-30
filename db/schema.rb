@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20130517001835) do
     t.string   "avatar"
     t.string   "access_token"
     t.string   "access_token_secret"
+    t.string   "encrypted_password",  :default => ""
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",       :default => 0
     t.datetime "current_sign_in_at"
