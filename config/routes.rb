@@ -2,7 +2,7 @@ Itbackup::Application.routes.draw do
 
 
 
-  devise_for :users, :controllers => { :omniauth_callbacks => :omniauth_callbacks }, :skip => [:registrations, :confirmations, :sessions, :passwords]
+  devise_for :users, :controllers => { :omniauth_callbacks => :omniauth_callbacks }#, :skip => [:registrations, :confirmations, :sessions, :passwords]
 
 
   namespace :admin do

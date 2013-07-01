@@ -219,7 +219,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :weibo,'198861589', '51a621dc59984639dac4a8b61d1f2553'
   config.omniauth :tqq,'100474823', '13323d4f2dcbeac66fc20cdcaf110a4c'
-  config.omniauth :qq_connect,'100474823', '13323d4f2dcbeac66fc20cdcaf110a4c'
+  config.omniauth :qq_connect,'100474823', '13323d4f2dcbeac66fc20cdcaf110a4c', scope: "get_user_info"
   
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
