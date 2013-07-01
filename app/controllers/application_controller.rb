@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_seo_tag
-  private
   
   
+  def after_sign_in_path_for(resource)
+   blogs_path
+  end
+  def after_sign_out_path_for(resource)
+    blogs_path
+  end
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
       username == "admin" && password == "vjoin"

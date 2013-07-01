@@ -218,9 +218,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :weibo,'198861589', '51a621dc59984639dac4a8b61d1f2553'
-  config.omniauth :tqq,'100474823', '13323d4f2dcbeac66fc20cdcaf110a4c'
+  config.omniauth :tqq,'801379989', 'edd16e1c4204787f15b70a8b7bef643f'
   config.omniauth :qq_connect,'100474823', '13323d4f2dcbeac66fc20cdcaf110a4c', scope: "get_user_info"
-  
+  config.omniauth :renren,'d98f6ba7de2142b2a67a1c1eb8bde319', '7465d63e195d488dbf3cf22e9394ed5b'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
