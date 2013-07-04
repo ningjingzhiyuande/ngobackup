@@ -1,12 +1,18 @@
 class BlogsController < ApplicationController
-  before_filter :authenticate ,:only=>[:new]
+  before_filter :authenticate_user! ,:only=>[:new,:riche_text]
 
   def index
   	@blogs = Blog.order("id desc").page(params[:page]).per(3)
   	
   end
 
+  def rich_text
+     @blog = Blog.new
+  end
+
   def show
+    @blog = Blog.find params[:id]
+    @flag=true
   end
 
   def new 

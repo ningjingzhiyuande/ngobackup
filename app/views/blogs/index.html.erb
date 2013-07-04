@@ -3,23 +3,9 @@
 <div class="blankSeparator"></div>
 <div class="container blog">
   <div class="two_third">
-  <%@blogs.each do |blog|%>
-      <section class="post">
-         <h2><%=blog.title%></h2>
-         <p class="meta">
-            <span class="left">Date: <strong><%=blog.created_at.strftime("%Y/%m/%d")%></strong></span><span class="left">posted by <strong><%=blog.user.present? ? blog.try(:user).try(:nickname) : "Admin"%></strong></span>
-            <span class="left tags"><%=blog.tags%></span> 
-           <!-- <span class="left comment"> <a href="#" title="">46 Comments</a></span> -->
-          </p>
-       <%#blog.assets.each do |asset|%>
-          <%=link_to image_tag(blog.cover.url,:class=>"prettyPhoto[gal]"),blog%>
-       <%#end%>
-       <p><%=raw blog.content%></p>
-       <h4>Tags: <%=blog.tags%></h4>
-       <a href="/blogs/<%=blog.id%>" class="buttonhome">&rarr; more</a> 
-    </section>
-
-  <%end%>
+  <%#@blogs.each do |blog|%>
+  <%=render partial: "blog",collection: @blogs%>       
+  <%#end%>
    <div class="container">
   <div class="blankSeparator"><!-- --></div>
   <div id="pagination" class="fl"> 
@@ -43,5 +29,5 @@
   </div>
   <!-- ten columns ends here --> 
   <%=render "blog_right_login"%>
-  <%#=render "blog_right"%>
+  <%=render "blog_right"%>
 </div>

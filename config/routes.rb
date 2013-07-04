@@ -23,7 +23,11 @@ Itbackup::Application.routes.draw do
 
   resources "home",:controller=>"home",:only=>[:index]
   resources "ngo",:controller =>"ngo",:only=>[:index]
-  resources "blogs",:only=>[:index,:show,:new,:create]
+  resources "blogs",:only=>[:index,:show,:new,:create] do
+    collection do
+       get :rich_text
+    end
+  end
   resources "about",:controller =>"about",:only=>[:index]
   resources "cases",:only=>[:index]
   resources "contacts",:only=>[:index,:create]

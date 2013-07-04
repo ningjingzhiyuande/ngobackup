@@ -6,6 +6,7 @@
        <%if current_user%>
          <li><a>欢迎您：<%=current_user.nickname%></a></li>
          <li><%=link_to "退出登陆", destroy_user_session_path,:method=>"delete"%></li>
+         <li><%=link_to "发布博客", new_blog_path%></li>
        <%else%>
         <li><a class="about" href="/users/auth/weibo" title="" ><span style="padding-left:30px;background: url(/images/auth/tsina.png) left no-repeat;padding-top:5px">新浪微博登陆</span></a></li>
        <li><a class="about" href="/users/auth/qq_connect" title="" ><span style="padding-left:30px;background: url(/images/auth/tqq.png) left no-repeat;padding-top:5px">QQ帐户登陆</span></a></li>
