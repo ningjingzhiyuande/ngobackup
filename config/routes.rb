@@ -20,12 +20,13 @@ Itbackup::Application.routes.draw do
     root :to=>"ngos#index"
   end
 
-
+  resources :assets,:only=>[:create]
   resources "home",:controller=>"home",:only=>[:index]
   resources "ngo",:controller =>"ngo",:only=>[:index]
   resources "blogs",:only=>[:index,:show,:new,:create] do
     collection do
        get :rich_text
+       post :create_rich
     end
   end
   resources "about",:controller =>"about",:only=>[:index]

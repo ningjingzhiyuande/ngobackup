@@ -1102,7 +1102,7 @@ form#contact_form label span {
 form#contact_form input[type="text"]:focus, form#contact_form input[type="text"]:hover, form#contact_form textarea:focus, form#contact_form textarea:hover, form#contact_form input[type="text"]:focus, form#contact_form input[type="text"]:hover, form#contact_form textarea:focus, form#contact_form textarea:hover {
 	background-color:#efefef;
 }
-form#contact_form input[type="submit"] {
+form#contact_form input[type="submit"],#submit_rich_text input[type="button"] {
 	background: #414550;
 	border:none;
 	padding:5px;
@@ -1139,8 +1139,16 @@ form#contact_form input[type="submit"]:hover {
 /****************  new blog ************/
 .new_blog h2{
 	text-align: center;
+	
+	font-weight: bolder;
+}
+.rich_text h2{
+	text-align: center;
+    margin-top:10px;
+	font-weight: bold;
 }
 .new_blog div{padding:10px 0px 0 20px;}
+.rich_text div{margin:0 auto;padding:0px;}
 .new_blog div label{width:10%;float:left;color:red;height: 30px;
 	padding: 10px;text-align: right;}
 .new_blog input[type="text"] {	
