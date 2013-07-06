@@ -1,0 +1,42 @@
+<!-- Single Blog Content Part ==================================================
+================================================== -->
+<div class="rich_text"> 
+      
+      <form action="/blogs/create_rich" method="post" class="rich_text_form">
+          <h2>添加新日志   <span style="padding-left:200px" id="submit_rich_text"><input type="button" value="保存文章" name="send" class="send_content"></span></h2>
+        
+       <textarea id="redactor" name="content">
+      
+       </textarea>
+
+       <input type="text" value="1" name="status"/>
+     </form>
+</div>
+<%=javascript_include_tag "zh_cn"%>
+<script type="text/javascript">
+ $(function()
+  {
+    $('#redactor').redactor({
+      focus: true,
+      plugins: ['fullscreen'],
+      imageUpload: '/assets',
+     // autosave: '/blogs/create_rich',
+      //autosaveInterval: 3,
+      //autosaveCallback: function(data) { alert(data["content"]); }
+
+    });
+
+    $(".send_content").click(function(){
+      $.ajax({
+        url: '/blogs/create_rich',
+        type: 'post',
+        data: $('.rich_text_form').serialize(),
+        success: function(data){alert(data["content"])}
+      });
+
+    }) 
+
+  });
+</script>
+<!-- container ends here -->
+
